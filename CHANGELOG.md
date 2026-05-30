@@ -1,5 +1,39 @@
 # Changelog
 
+## v2.3.1
+
+### 🌍 Expanded Language Support
+
+Added new translations to make Apex Bot accessible to even more users.
+
+### Added
+
+- French language support
+- Spanish language support
+- Italian language support
+- Local emoji assets integrated directly into the bot application
+- `/info` now supports localized content and interactive buttons
+
+### Improved
+
+- `/who` now uses locally stored images with API fallback support, improving reliability and response times
+- Vote caching system redesigned to provide instant access to premium commands after voting
+- Vote data is now cached until its expiration time, reducing unnecessary API requests
+- Guild count updates are now only sent when the count actually changes
+- `/settings edit` now preserves existing account data when Apex API requests fail (such as 404 responses)
+
+### Fixed
+
+- Fixed `/stats` throwing errors when a player cannot be found
+- Prevented duplicate vote cache checks
+- Improved handling of API failures across multiple commands
+
+### Changed
+
+- Migrated emoji assets from the legacy emoji server to Discord application emojis
+- Removed dependency on externally hosted emoji resources
+- General performance, stability, and code quality improvements throughout the bot
+
 ## v2.3.0
 
 ### 🌍 Multi-Language Support
