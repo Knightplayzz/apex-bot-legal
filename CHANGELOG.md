@@ -1,5 +1,41 @@
 # Changelog
 
+## v2.3.2
+
+### 🌍 Localization Expansion
+
+Continued improvements to the bot's localization system, with additional commands now fully supporting multiple languages.
+
+### Added
+
+- Added wildcard support to `/map`
+- Added new `/map battle_royale` subcommand
+- Added new `/map ranked` subcommand
+- `/stats` and `/me` now display how long a player has been in-game
+- `/stats` and `/me` are now fully localized across supported languages
+
+### Improved
+
+- `/drop` now displays images correctly and more reliably
+- `/info` now fully supports localization
+- Updated `/map` images for improved visual quality
+- `/map` now prioritizes local image assets with API fallback support
+- Language system improvements to ensure newly added languages function correctly
+
+### Changed
+
+- Renamed `/map ltm` to `/map mixtape`
+- Updated ESLint configuration to improve switch-case handling and code consistency
+
+### Fixed
+
+- Fixed image rendering issues in `/drop`
+- Fixed localization issues affecting newly added languages
+
+### Performance & Stability
+
+- General code quality, maintainability, and stability improvements throughout the bot
+
 ## v2.3.1
 
 ### 🌍 Expanded Language Support

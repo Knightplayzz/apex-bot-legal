@@ -10,12 +10,12 @@ Older versions may continue to function but:
 - May contain unresolved vulnerabilities
 - May lack important bug fixes and new features
 
-Potential security issues may exist in versions prior to `v2.3.1`, especially versions using older Firebase implementations.
+Potential security issues may exist in versions prior to `v2.3.2`, especially versions using older Firebase implementations.
 
 | Version | Supported |
 | ------- | --------- |
-| 2.3.1   | ✅ Yes    |
-| < 2.3.1 | ❌ No     |
+| 2.3.2   | ✅ Yes    |
+| < 2.3.2 | ❌ No     |
 
 ## Reporting a Vulnerability
 
