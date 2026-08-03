@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.3.3
+
+### 📊 Statistics & Data Tracking Expansion
+
+Added new statistics features to improve tracking of Apex data and bot growth over time.
+
+### Added
+
+- Added new `/pickrate` command
+- Added automatic pickrate fetching every 12 hours
+- Pickrate data now includes:
+  - Current pickrate for every character
+  - Pickrate changes compared to the previous update
+- Pickrate statistics are now stored in the database for faster command responses
+- Added pickrate data freshness checks:
+  - Warning displayed when data is older than 24 hours
+  - Pickrate information hidden when data is older than 48 hours
+- Added daily server count tracking
+- Added automatic server count history storage
+- Added server count graph that updates daily to display bot growth over time
+
+### Performance & Stability
+
+- Reduced unnecessary API requests by storing regularly updated statistics in the database
+
 ## v2.3.2
 
 ### 🌍 Localization Expansion
