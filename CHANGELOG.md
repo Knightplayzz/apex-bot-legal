@@ -1,5 +1,73 @@
 # Changelog
 
+## v2.3.5
+
+### 🔒 Privacy & Permission Improvements
+
+Improved bot privacy, reduced unnecessary Discord permissions, and updated user data policies for better transparency.
+
+### Changed
+
+- Removed `GatewayIntentBits.GuildMembers` from the bot
+- Disabled the use of privileged intents in the Discord Developer Portal
+- Removed the `memberRemove` event as it was no longer used
+- Updated the `/info` command:
+  - Added a button linking to the bot's status page
+  - Status page links now automatically redirect users to their selected language version
+
+### Privacy Policy Update
+
+Updated the privacy policy wording to better reflect how user data is handled.
+
+Changed from:
+
+> Data may be shared with or sold to third-party services, partners, or providers for analytics, hosting, service improvement, advertising, or operational purposes.
+
+To:
+
+> Data may be shared with trusted third-party service providers when necessary to operate and maintain the bot, such as hosting providers, database providers, or external APIs used to provide Apex Legends-related features. We do not sell user data to third parties.
+
+### Performance & Stability
+
+- Reduced required Discord permissions by removing unused privileged intents
+- Improved transparency around third-party services and data usage
+- Reduced unnecessary event handling
+
+### 🛡️ Security Improvements
+
+Improved the bot's security by updating dependencies and resolving known security issues.
+
+- Resolved 12 security vulnerabilities
+- Updated affected dependencies to improve overall security and stability
+- Improved protection against known vulnerabilities in third-party packages
+
+## v2.3.4
+
+### 📈 Monitoring & Reliability Improvements
+
+Expanded the bot's monitoring infrastructure and improved how background statistics are managed for greater reliability and reduced unnecessary requests.
+
+### Added
+
+- Added comprehensive Better Stack monitoring
+- Added automatic notifications when the bot goes offline
+- Added automatic error notifications
+- Added automatic warning notifications
+- Added heartbeat monitoring for the daily database update task to ensure it runs successfully
+- Added heartbeat monitoring for uptime
+
+### Changed
+
+- Pickrate data is now refreshed once every 24 hours instead of every 12 hours
+- Updated pickrate data freshness checks:
+  - Warning is now displayed when data is older than 48 hours
+  - Pickrate information is now hidden when data is older than 72 hours
+
+### Performance & Stability
+
+- Reduced background processing by decreasing pickrate update frequency
+- Improved bot reliability through continuous uptime, cron job, and error monitoring
+
 ## v2.3.3
 
 ### 📊 Statistics & Data Tracking Expansion

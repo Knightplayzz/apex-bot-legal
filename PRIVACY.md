@@ -9,7 +9,7 @@ Stored data is used for:
 - Command handling
 - User preferences
 
-Data may be shared with or sold to third-party services, partners, or providers for analytics, hosting, service improvement, advertising, or operational purposes.
+Data may be shared with trusted third-party service providers when necessary to operate and maintain the bot, such as hosting providers, database providers, or external APIs used to provide Apex Legends-related features. We do not sell user data to third parties.
 
 ## Stored Information
 
