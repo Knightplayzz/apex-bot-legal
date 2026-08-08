@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.3.6
+
+### ⚙️ Command Improvements
+
+Improved several commands to provide more reliable data handling, better navigation, and a cleaner user experience.
+
+### Changed
+
+- Updated `/settings edit` to include a random number in the interaction ID
+  - Prevents Discord from caching previously displayed information
+  - Fixed an issue where deleted settings could reappear after using `/settings delete`
+
+- Updated `/loadout` to fix an issue with the Rampage weapon description exceeding Discord's 100-character limit
+- Fully updated `/pickrate`:
+  - Added pagination with a maximum of 10 legends per page
+  - Page navigation buttons automatically deactivate after 60 seconds of inactivity
+  - Updated the pickrate display format to present all data more clearly
+  - Improved the overall readability of pickrate information
+
+### Performance & Stability
+
+- Improved `/settings` data handling to prevent stale information from being displayed
+- Improved `/pickrate` usability and navigation for larger datasets
+- Fixed the Rampage loadout description exceeding Discord's character limit
+
 ## v2.3.5
 
 ### 🔒 Privacy & Permission Improvements
