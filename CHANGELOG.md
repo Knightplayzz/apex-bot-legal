@@ -1,5 +1,50 @@
 # Changelog
 
+## v2.3.7
+
+### 📊 Command Statistics & Analytics
+
+Added a new command statistics system to track command usage and provide more detailed insights into how commands are being used.
+
+### Added
+
+- Added a command usage logger that records command executions in the database
+  - Tracks the total number of executions for each command
+  - Tracks the number of unique users executing each command
+  - Statistics are stored per day
+  - Uses Firestore transactions to ensure execution and unique-user counts remain accurate
+
+- Added privacy protection for unique-user tracking
+  - Discord user IDs are hashed using SHA-256 before being stored
+  - A server-side `COMMAND_STATS_HASH_SECRET` environment variable is used as a secret for the hashing process
+  - Raw Discord user IDs are never stored in the command statistics data
+
+- Added the ability to exclude specific users from command statistics
+  - Excluded user IDs can be configured through `settings.json`
+  - Excluded users are not counted in executions or unique-user statistics
+
+### `/pickrate` Improvements
+
+Updated the `/pickrate` command to use the centralized custom ID system.
+
+- Updated `/pickrate` pagination buttons to use `customIds.json`
+- Added three new pickrate custom IDs:
+  - `prevPageButton`
+  - `nextPageButton`
+  - `indicator`
+
+- Updated the pickrate button handling to use the new custom ID configuration
+- Removed the unnecessary `return message` from the `/pickrate` command
+- Removed the unnecessary returned message from the pickrate button handling
+- Improved the organization and maintainability of the pickrate interaction system
+
+### ⚙️ Performance & Stability
+
+- Added transactional command statistics updates to prevent inaccurate execution and unique-user counts
+- Improved the `/pickrate` button system by centralizing custom IDs in `customIds.json`
+- Reduced unnecessary return values from command and button handlers
+- Improved the overall structure and maintainability of command statistics and pickrate interactions
+
 ## v2.3.6
 
 ### ⚙️ Command Improvements

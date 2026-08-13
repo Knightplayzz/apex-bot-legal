@@ -14,8 +14,8 @@ Potential security issues may exist in versions prior to `v2.3.2`, especially ve
 
 | Version | Supported |
 | ------- | --------- |
-| 2.3.5   | ✅ Yes    |
-| < 2.3.5 | ❌ No     |
+| 2.3.7   | ✅ Yes    |
+| < 2.3.7 | ❌ No     |
 
 ## Reporting a Vulnerability
 
