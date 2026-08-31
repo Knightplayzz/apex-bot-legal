@@ -1,5 +1,238 @@
 # Changelog
 
+## v2.3.9
+
+### 📊 Command Statistics Improvements
+
+Expanded the command statistics system with detailed usage statistics and historical graphs.
+
+### Added
+
+- Added a new command statistics function to display command usage data
+  - Displays the total number of command executions per command
+  - Displays the number of unique users executing each command
+  - Supports selecting between the last 7 days and 30 days
+
+- Added per-command execution graphs
+  - Displays command executions over time
+  - Supports viewing the last 7 days or 30 days
+  - Shows the number of executions per day
+  - Includes unique executions to show how many unique users used the command each day
+
+### ⚙️ Interaction Router Improvements
+
+Updated the interaction routers to improve error handling, scalability, and maintainability.
+
+- Updated the button router to provide improved error handling
+- Updated the select menu router to provide improved error handling
+- Updated the modal router to provide improved error handling
+- Changed the interaction routers to use Maps for better scalability
+- Improved the overall structure and handling of interaction routes
+
+### 📈 Server Count Improvements
+
+Updated the server count system to reduce unnecessary API requests.
+
+- Updated `serverCount.js`
+- Removed unnecessary guild fetching
+
+### 🌐 Apex API Improvements
+
+Improved map rotation data handling in `apexApi.js`.
+
+- Updated `fetchMapRotation`
+- Invalid map rotation data is no longer cached
+- Prevents invalid API responses from being stored and reused from the cache
+- Improves the reliability and freshness of map rotation data
+
+## v2.3.8
+
+### 🔐 Authentication & Security
+
+Removed unnecessary authentication data being passed throughout the bot.
+
+- Removed `auth` from being passed as a parameter throughout the bot
+- `auth` was not required for most functions
+- Reduced unnecessary data exposure between functions
+- Improved the overall security and maintainability of the code
+
+### 💎 Entitlement Handling
+
+Added automatic handling for newly created Discord entitlements.
+
+- Added `entitlementCreate` handling
+- Automatically saves entitlement information to the database
+- Automatically updates the user's cache
+- Keeps the user's premium status synchronized without requiring additional requests
+
+### 🗳️ Vote Webhook System
+
+Added automatic vote processing using a Cloudflare Worker and Discord webhook channel.
+
+- Added webhook support for vote events
+- Cloudflare Worker receives the vote webhook
+- The Worker sends the vote information to a private Discord channel
+- `messageCreate` processes the message and updates the database
+- Automatically updates the user's cache after receiving a vote
+- Keeps vote information synchronized between the database and cache
+
+### ⚡ Interaction Handling
+
+Improved the `interactionCreate` handler to reduce unnecessary database requests and improve response speed.
+
+- Improved the overall interaction processing speed
+- `userData` is now passed throughout the interaction handling process
+- Prevents unnecessary repeated `getUserData` calls
+- Reduces database requests during interactions
+
+### 👤 User Data & `getUserData`
+
+Improved how user data is retrieved and synchronized.
+
+- `getUserData` now primarily relies on the database instead of fetching all user data from an API endpoint
+- User data is automatically updated in the database when required
+- User data is cached for up to one hour
+- Reduced unnecessary API requests
+- Improved reliability when retrieving user information
+
+### 💾 Caching System
+
+Improved the general caching system throughout the bot.
+
+- Added caching for `userData`
+- API response caching can now be configured per function
+- Cache durations can be configured through `settings.json`
+- Improved cache performance and reduced unnecessary API requests
+- Improved synchronization between cached data and database data
+
+### 🧩 Command Routers
+
+Improved all command routers to use centralized user data instead of repeatedly calculating user status.
+
+- Command routers now use `getUserData` to determine whether a user has voted
+- Command routers now use `getUserData` to determine whether a user has premium
+- Removed unnecessary repeated vote status calculations
+- Removed unnecessary repeated premium status calculations
+- Reduced database and API requests
+
+### 📊 Server Count
+
+Changed the server count update system to prevent unnecessary executions.
+
+- Removed automatic `setGuildCount` execution from `guildCreate`
+- Removed automatic `setGuildCount` execution from `guildDelete`
+- `setGuildCount` is now only executed once per day
+- Reduced unnecessary server count updates
+
+### 🛠️ Crafting System
+
+Improved the crafting system by removing unnecessary external requests.
+
+- Crafting items are now hardcoded
+- Removed API requests for crafting rotations
+- Crafting rotations have remained unchanged for the last several seasons
+- Improved reliability
+- Reduced external API usage
+
+### 🌍 `/loadout` Localization
+
+Improved localization for the `/loadout` command.
+
+- Added localized placeholders for select menus
+- Select menu placeholders now use the user's selected language
+- Improved the overall localization of `/loadout`
+
+### 🔄 Shard Handling
+
+Improved shard reconnect handling.
+
+- Fixed an issue where `undefined` could be displayed for reconnecting shards
+- Improved shard status handling
+- Improved shard reconnect logging
+
+### 🧰 Helper Functions
+
+Improved and reorganized commonly used helper functionality.
+
+- Added commonly reused functionality to helper functions
+- Reduced duplicated functionality throughout the bot
+- Improved code reusability
+- Improved maintainability
+
+### 🗄️ Data Configuration
+
+Moved configuration data into `settings.json`.
+
+- Moved links into `settings.json`
+- Moved default user data into `settings.json`
+- Moved other configurable information into `settings.json`
+- Removed unnecessary hardcoded configuration
+- Reduced the amount of configuration stored in `.env`
+
+### ⏳ User Data TTL
+
+Added automatic expiration for inactive user data.
+
+- Added a 30-day TTL for user data
+- User data is automatically deleted after 30 days of inactivity
+- Premium users are excluded from automatic deletion
+- Premium user data is stored indefinitely
+
+### 🔒 User Data Hashing
+
+Improved privacy by hashing stored user information.
+
+- Added separate hashes for personal information and statistics
+- User data stored in the cache is also hashed
+- Improved protection of stored user information
+- Reduced exposure of raw user data
+
+### 🔥 Firebase Configuration Security
+
+Improved the security of the Firebase configuration.
+
+- Removed `firebaseConfig.json`
+- Firebase configuration is now encoded and stored in `.env`
+- Prevents the Firebase configuration from being stored as a separate file
+- Improved protection of Firebase credentials
+
+### 🧪 Import Validation
+
+Added a script to detect broken relative imports.
+
+- Added the `check-imports` script
+- Checks relative import paths throughout the project
+- Detects invalid or broken relative imports
+- Makes it easier to identify import issues before deployment
+
+### 🛡️ Error Handling
+
+Improved general error handling throughout the bot.
+
+- Improved handling of unexpected errors
+- Reduced the chance of secondary errors during error handling
+- Improved overall reliability
+
+### 🐛 Bug Fixes
+
+Fixed several issues throughout the bot.
+
+- Fixed an issue with `/pickrate` where deleting the message before the component timeout could cause the timeout handler to crash
+- Improved handling of deleted messages during component cleanup
+- Removed unnecessary functions
+- Improved general functionality and stability
+
+### ⚙️ General Improvements
+
+Made various improvements to the overall bot architecture.
+
+- Removed unnecessary functionality
+- Reduced duplicated code
+- Reduced unnecessary API and database requests
+- Improved data flow throughout the bot
+- Improved caching and database synchronization
+- Improved overall performance, security, reliability, and maintainability
+
 ## v2.3.7
 
 ### 📊 Command Statistics & Analytics
