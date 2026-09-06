@@ -1,5 +1,45 @@
 # Changelog
 
+## v2.4.0
+
+### 🌐 Localization
+
+Added support for the following languages:
+
+- Japanese
+- Korean
+- Russian
+- Turkish
+- Chinese (Simplified) — zh-CN
+- Chinese (Traditional) — zh-TW
+- Portuguese (Brazil) — pt-BR
+
+### ⚙️ Settings Improvements
+
+Updated `/settings edit` to provide better error handling when the Apex API returns a 404 error.
+
+### 🗺️ Map Rotation Logging
+
+Changed map rotation logging when no map rotation is returned.
+
+- Changed from `logWarn` to `logInfo`
+- Prevents expected API responses from being incorrectly treated as warnings
+
+### 🎨 Distribution Improvements
+
+Updated `distribution.js` with improved images and embeds.
+
+- Improved embed design
+- Improved image presentation
+- Cleaner overall appearance
+
+### 🔄 Shard Handling
+
+Changed shard reconnect logging.
+
+- Changed `logWarn` to `logInfo`
+- Shard reconnects are no longer treated as warnings
+
 ## v2.3.9
 
 ### 📊 Command Statistics Improvements
