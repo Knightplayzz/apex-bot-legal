@@ -1,5 +1,37 @@
 # Changelog
 
+## v2.4.1
+
+### 💎 Premium Command Improvements
+
+Updated premium commands to be accessible to all users.
+
+- Premium commands can now be used by non-premium members
+
+### 🗳️ Vote & Premium Reminders
+
+Added small vote and premium reminders for users who have neither premium nor an active vote.
+
+- /rank-distribution always displays the reminder
+
+- /map commands have a 1 in 3 chance of displaying the reminder
+
+- Stats commands such as /stats and /me and stats context menu have a 1 in 3 chance of displaying the reminder
+
+### 🎨 Vote Embed Improvements
+
+Improved the appearance and presentation of the vote embed.
+
+- Updated the embed design
+
+- Improved the wording and overall presentation
+
+### 🐛 Bug Fixes
+
+Fixed a small issue in botStatus.js.
+
+- Fixed logWarn being called before it was initialized
+
 ## v2.4.0
 
 ### 🌐 Localization
