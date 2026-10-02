@@ -1,5 +1,81 @@
 # Changelog
 
+## v2.4.2
+
+### 💓 Heartbeat Improvements
+
+Updated the Better Stack heartbeat system to improve reliability and reduce unnecessary requests.
+
+- Changed the heartbeat interval from every minute to every 5 minutes
+- Fixed a timeout bug that could prevent the heartbeat from being sent in time
+- Added a warning when no heartbeat URL is configured
+
+### 🔐 User Installation & Command Access
+
+Improved support for user-installed bots.
+
+- Users who install the bot directly can now access all available commands
+
+### 🗳️ Voting & Premium Cache Fix
+
+Fixed an issue where voting did not correctly update the user's cache.
+
+- Voting now correctly updates the cache
+- Premium perks are now immediately available after voting
+
+### 🔒 Security Update
+
+Updated the bot's security to address a security vulnerability.
+
+- Older versions are no longer supported
+- Updated the bot to prevent the vulnerability from affecting supported versions
+- The vulnerability did not directly impact the bot, but the security update ensures the bot remains protected
+
+### 📊 Status Updating Improvements
+
+Improved the status update system to prevent duplicate updates.
+
+- Status updates can now only run once at a time
+
+### 🗳️ Support & Vote Embed Improvements
+
+Updated when the support or vote embed is displayed.
+
+- The embed is now displayed every 3 interactions instead of using a 1-in-3 random chance
+- The interaction interval can be configured in `settings.json`
+- The embed now applies to all commands except `info`, `invite`, and `settings`
+
+### ⚡ Performance Improvements
+
+Significantly improved command response speed.
+
+- Commands are now automatically deferred unless explicitly configured not to defer
+- The first command execution now defers immediately while the bot simultaneously fetches the user's data from the database
+- Reduces perceived command loading time
+- Rank distribution images are now cached
+- Loadout now uses the actual image files instead of URLs (URLs are still available as a fallback if the local image is unavailable)
+- Pickrate data is now stored in the cache
+
+### 🗳️ Loadout & Pickrate Vote Embed Fix
+
+Fixed an issue where pressing a button in `/loadout` or `/pickrate` would remove the support or vote embed.
+
+- The support or vote embed now remains visible when interacting with buttons
+
+### 🗺️ Map Rotation Cache Improvements
+
+Improved handling of invalid or missing map rotation data.
+
+- Map rotation data is no longer cached when no valid rotation is provided
+- The bot now retries fetching the data after a delay
+
+### 📊 Stats Display Fix
+
+Fixed the stats display when a top percentage is unavailable.
+
+- The top percentage is no longer displayed when it has not been calculated
+- Prevents `(Top ...)` from being shown when no valid top percentage is available
+
 ## v2.4.1
 
 ### 💎 Premium Command Improvements
