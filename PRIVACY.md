@@ -75,7 +75,11 @@ Cached data may include:
 - Premium status
 - API responses
 - Bought SKU information
+- `showPrompt` — A boolean indicating whether the user should currently be shown the support or vote prompt
+- `commandCount` — The number of commands the user has used since the support or vote prompt was last displayed
 - Other temporary information required for Bot functionality
+
+The `showPrompt` and `commandCount` values are used to determine when the `getSupportOrVoteEmbed` prompt should be displayed. This prompt is shown periodically based on a configured command interval to remind users that they can vote for the Bot or purchase premium.
 
 Cache durations can vary depending on the type of data and may be configured separately for different types of information.
 

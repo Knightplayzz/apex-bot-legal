@@ -1,5 +1,43 @@
 # Changelog
 
+## v2.4.3
+
+### 🗳️ Voting System Fix
+
+Finally fixed the voting system so that votes are correctly processed.
+
+- Users now correctly receive premium after voting
+- Fixed an issue where the bot could not read vote messages unless the message contained a mention of the bot
+
+### 🖼️ Image & Caching Improvements
+
+Improved image handling and centralized image creation in `apexHelper.js`.
+
+- Crafting images are now cached
+- Crafting images are now created in `apexHelper.js`
+- Distribution images are now created in `apexHelper.js`
+- Map images are now created in `apexHelper.js`
+- Weapon images are now created in `apexHelper.js`
+- Weapon images now use the local image first, with the URL as a fallback
+- Team images are now created in `apexHelper.js`
+- Legend images are now created in `apexHelper.js`
+- Legend images now use the local image first, with the URL as a fallback
+- Updated `/who` and stats commands to use the new legend image system
+
+### 🛠️ Helper & Data Handling Improvements
+
+Moved shared data handling functions into `apexHelper.js`.
+
+- Moved `normalizeRankSnapshot` to `apexHelper.js`
+- Moved `checkData` to `apexHelper.js`
+
+### 🔍 Import Checker Improvements
+
+Improved the `check-imports.js` script.
+
+- Improved import checking and detection
+- Makes it easier to identify missing or incorrect imports
+
 ## v2.4.2
 
 ### 💓 Heartbeat Improvements
