@@ -1,5 +1,83 @@
 # Changelog
 
+## v2.4.4
+
+### 🗺️ Map Image Fixes
+
+Fixed issues with map images not correctly using local image files.
+
+- Fixed a bug where map images would not use local images
+- Added 2 new map images
+- Fixed a bug where the Mad Maggie legend image would not use the local image due to an incorrect reference
+
+### ⏰ Scheduled Job Improvements
+
+Improved how scheduled jobs are handled across shards.
+
+- Scheduled jobs now only run on shard 0 instead of running on every shard
+- Prevents duplicate scheduled task executions across shards
+
+### 📊 Bot Status Improvements
+
+Improved bot status updates and API data handling.
+
+- Bot status now caches the BR Pubs data independently instead of relying on the `Apex API` cache
+- Prevents issues caused by the `Apex API` cache changing between game modes
+- Fixed a bug with the bot's activity status so it now works correctly across all shards
+
+### 🗳️ Voting & Premium Fix
+
+Fixed an issue where users did not immediately receive premium after voting.
+
+- Premium is now correctly granted immediately after a successful vote
+
+### 📈 TopStats Integration
+
+Added TopStats to track bot statistics and growth.
+
+- Added tracking for server growth
+- Added ping tracking
+- Added command usage tracking
+- Added support for tracking additional bot statistics
+
+### 🔒 Safe Shutdown
+
+Added safe shutdown handling to improve reliability.
+
+- The bot now performs a safe shutdown when terminating
+- Helps ensure resources are properly cleaned up before the process exits
+
+### ⚙️ Node.js & npm Updates
+
+Updated the runtime and package manager.
+
+- Upgraded Node.js from `v22.19.0` to `v24.15.0`
+- Updated npm to `v12.2.0`
+
+### 🛠️ ESLint & Prettier Improvements
+
+Improved code quality and consistency across the project.
+
+- Added Prettier directly to the project instead of relying solely on client-side formatting
+- Expanded ESLint rules to enforce additional code quality standards
+- Improved consistency between linting and formatting
+
+### 💬 Guild Removal Feedback
+
+Added a new feedback system for when the bot is removed from a server.
+
+- The server owner now receives a direct message when the bot is removed
+- Added a select menu allowing the owner to choose a reason for removing the bot
+- Added a modal for submitting additional feedback
+- Added a button to reinvite the bot
+
+### 🔗 Invite Link Improvement
+
+Changed the bot's invite link to use Discord's native authorization link instead of redirecting through Top.gg.
+
+- Clicking the invite link now opens Discord's invite and authorization menu directly
+- Removes the unnecessary redirect to Top.gg
+
 ## v2.4.3
 
 ### 🗳️ Voting System Fix
